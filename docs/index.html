@@ -9364,106 +9364,6 @@ $w_{new}=w_{old}-\alpha*\frac{\delta f_{loss}}{\delta w}$</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [212]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">html_template</span> <span class="o">=</span> <span class="s2">"""</span>
-<span class="s2">&lt;!DOCTYPE html&gt;</span>
-<span class="s2">&lt;html&gt;</span>
-<span class="s2">&lt;head&gt;</span>
-<span class="s2">    &lt;title&gt;Gradient Descent Visualization&lt;/title&gt;</span>
-<span class="s2">    &lt;script src="https://cdn.jsdelivr.net/npm/chart.js"&gt;&lt;/script&gt;</span>
-<span class="s2">&lt;/head&gt;</span>
-<span class="s2">&lt;body&gt;</span>
-<span class="s2">    &lt;h1&gt;Gradient Descent Visualization&lt;/h1&gt;</span>
-<span class="s2">    &lt;div&gt;</span>
-<span class="s2">        Learning Rate: &lt;input type="number" id="learningRate" value="0.3" step="0.1"&gt;</span>
-<span class="s2">        Iterations: &lt;input type="number" id="iterations" value="10" step="1"&gt;</span>
-<span class="s2">        &lt;button onclick="updateChart()"&gt;Update&lt;/button&gt;</span>
-<span class="s2">    &lt;/div&gt;</span>
-<span class="s2">    &lt;canvas id="myChart"&gt;&lt;/canvas&gt;</span>
-
-<span class="s2">    &lt;script&gt;</span>
-<span class="s2">        function uShapedFunction(x) {</span>
-<span class="s2">    return x * x;</span>
-<span class="s2">}</span>
-
-<span class="s2">function gradient(x) {</span>
-<span class="s2">    return 2 * x;</span>
-<span class="s2">}</span>
-
-<span class="s2">function gradientDescent(learningRate, iterations) {</span>
-<span class="s2">    let xStart = 5;</span>
-<span class="s2">    let xValues = [xStart];</span>
-<span class="s2">    let yValues = [uShapedFunction(xStart)];</span>
-
-<span class="s2">    for (let i = 0; i &lt; iterations; i++) {</span>
-<span class="s2">        let xCurrent = xValues[xValues.length - 1];</span>
-<span class="s2">        let gradientCurrent = gradient(xCurrent);</span>
-<span class="s2">        let xNext = xCurrent - learningRate * gradientCurrent;</span>
-<span class="s2">        xValues.push(xNext);</span>
-<span class="s2">        yValues.push(uShapedFunction(xNext));</span>
-<span class="s2">    }</span>
-
-<span class="s2">    return { xValues, yValues };</span>
-<span class="s2">}</span>
-
-<span class="s2">function updateChart() {</span>
-<span class="s2">    let learningRate = parseFloat(document.getElementById("learningRate").value);</span>
-<span class="s2">    let iterations = parseInt(document.getElementById("iterations").value);</span>
-
-<span class="s2">    let { xValues, yValues } = gradientDescent(learningRate, iterations);</span>
-
-<span class="s2">    let ctx = document.getElementById('myChart').getContext('2d');</span>
-<span class="s2">    let myChart = new Chart(ctx, {</span>
-<span class="s2">        type: 'line',</span>
-<span class="s2">        data: {</span>
-<span class="s2">            labels: xValues,</span>
-<span class="s2">            datasets: [{</span>
-<span class="s2">                label: 'Gradient Descent',</span>
-<span class="s2">                data: yValues,</span>
-<span class="s2">                borderColor: 'red',</span>
-<span class="s2">                fill: false</span>
-<span class="s2">            }]</span>
-<span class="s2">        },</span>
-<span class="s2">        options: {</span>
-<span class="s2">            responsive: true,</span>
-<span class="s2">            scales: {</span>
-<span class="s2">                x: {</span>
-<span class="s2">                    display: true,</span>
-<span class="s2">                    title: {</span>
-<span class="s2">                        display: true,</span>
-<span class="s2">                        text: 'x'</span>
-<span class="s2">                    }</span>
-<span class="s2">                },</span>
-<span class="s2">                y: {</span>
-<span class="s2">                    display: true,</span>
-<span class="s2">                    title: {</span>
-<span class="s2">                        display: true,</span>
-<span class="s2">                        text: 'f(x)'</span>
-<span class="s2">                    }</span>
-<span class="s2">                }</span>
-<span class="s2">            }</span>
-<span class="s2">        }</span>
-<span class="s2">    });</span>
-<span class="s2">}</span>
-
-<span class="s2">// Initial chart rendering</span>
-<span class="s2">updateChart();</span>
-<span class="s2">    &lt;/script&gt;</span>
-<span class="s2">&lt;/body&gt;</span>
-<span class="s2">&lt;/html&gt;</span>
-<span class="s2">"""</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -9471,271 +9371,156 @@ $w_{new}=w_{old}-\alpha*\frac{\delta f_{loss}}{\delta w}$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Git-commands">Git commands<a class="anchor-link" href="#Git-commands">¶</a></h1><p>Storage for git commands</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [220]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="c1"># Run this after saving</span>
-<span class="c1"># Git config</span>
-<span class="err">!</span><span class="n">git</span> <span class="n">config</span> <span class="n">user</span><span class="o">.</span><span class="n">name</span> <span class="s2">"KaisuH"</span>
-<span class="err">!</span><span class="n">git</span> <span class="n">config</span> <span class="n">user</span><span class="o">.</span><span class="n">email</span> <span class="s2">"51493218+KaisuH@users.noreply.github.com"</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [261]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="c1"># Add changes</span>
-<span class="err">!</span><span class="n">git</span> <span class="n">add</span> <span class="o">.</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [262]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="c1"># Commit changes and remember to change commit message</span>
-<span class="err">!</span><span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">"Renamed html file"</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>[main 37f4181] Renamed html file
- 2 files changed, 1 insertion(+), 1 deletion(-)
- rename Emotion_AI.html =&gt; index.html (100%)
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [234]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">mv</span> <span class="o">.</span><span class="n">gitignore</span><span class="o">.</span><span class="n">txt</span> <span class="o">.</span><span class="n">gitignore</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>mv: cannot stat '.gitignore.txt': No such file or directory
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [263]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="c1"># Push changes</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'/content/drive/MyDrive/tokens/token1.txt'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">token</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<!DOCTYPE html>
 
-<span class="err">!</span><span class="n">git</span> <span class="n">push</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="err">$</span><span class="n">token</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">KaisuH</span><span class="o">/</span><span class="n">Emotion</span><span class="o">-</span><span class="n">AI</span><span class="o">.</span><span class="n">git</span>
-</pre></div>
+<html>
+<head>
+<title>Gradient Descent Visualization</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<h1>Gradient Descent Visualization</h1>
+<div>
+        Learning Rate: <input id="learningRate" step="0.1" type="number" value="0.3"/>
+        Iterations: <input id="iterations" step="1" type="number" value="10"/>
+<button onclick="updateChart()">Update</button>
 </div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Enumerating objects: 5, done.
-Counting objects:  20% (1/5)Counting objects:  40% (2/5)Counting objects:  60% (3/5)Counting objects:  80% (4/5)Counting objects: 100% (5/5)Counting objects: 100% (5/5), done.
-Delta compression using up to 2 threads
-Compressing objects:  33% (1/3)Compressing objects:  66% (2/3)Compressing objects: 100% (3/3)Compressing objects: 100% (3/3), done.
-Writing objects:  33% (1/3)Writing objects:  66% (2/3)Writing objects: 100% (3/3)Writing objects: 100% (3/3), 930 bytes | 155.00 KiB/s, done.
-Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
-remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
-To https://github.com/KaisuH/Emotion-AI.git
-   284bcc4..37f4181  main -&gt; main
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [254]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="err">!</span><span class="n">git</span> <span class="n">reset</span> <span class="o">--</span><span class="n">soft</span> <span class="n">HEAD</span><span class="o">~</span><span class="mi">1</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [240]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="err">!</span><span class="n">git</span> <span class="n">rm</span> <span class="o">-</span><span class="n">r</span> <span class="o">-</span><span class="n">f</span> <span class="o">--</span><span class="n">cached</span> <span class="n">Data</span><span class="o">/</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>rm 'Data/Emotion+AI+Dataset.zip'
-rm 'Data/augmented.csv'
-rm 'Data/data.csv'
-rm 'Data/detection.json'
-rm 'Data/emotion.json'
-rm 'Data/face_detection.json'
-rm 'Data/facial_detection.ipynb'
-rm 'Data/icml_face_data.csv'
-rm 'Data/models.config'
-rm 'Data/server.log'
-rm 'Data/test.csv'
-rm 'Data/training.csv'
-rm 'Data/weights.h5'
-rm 'Data/weights.hdf5'
-rm 'Data/weights_emotion.hdf5'
-rm 'Data/weights_emotions.hdf5'
-rm 'Data/weights_keypoint.hdf5'
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="err">!</span><span class="n">jupyter</span> <span class="n">nbconvert</span> <span class="o">--</span><span class="n">to</span> <span class="n">html</span> <span class="s2">"Emotion_AI.ipynb"</span> <span class="o">--</span><span class="n">output</span> <span class="n">docs</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">html</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [253]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="err">!</span><span class="n">git</span> <span class="n">pull</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="err">$</span><span class="n">token</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">KaisuH</span><span class="o">/</span><span class="n">Emotion</span><span class="o">-</span><span class="n">AI</span><span class="o">.</span><span class="n">git</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>From https://github.com/KaisuH/Emotion-AI
- * branch            HEAD       -&gt; FETCH_HEAD
-<span class="ansi-yellow-fg">hint: You have divergent branches and need to specify how to reconcile them.</span>
-<span class="ansi-yellow-fg">hint: You can do so by running one of the following commands sometime before</span>
-<span class="ansi-yellow-fg">hint: your next pull:</span>
-<span class="ansi-yellow-fg">hint: </span>
-<span class="ansi-yellow-fg">hint:   git config pull.rebase false  # merge (the default strategy)</span>
-<span class="ansi-yellow-fg">hint:   git config pull.rebase true   # rebase</span>
-<span class="ansi-yellow-fg">hint:   git config pull.ff only       # fast-forward only</span>
-<span class="ansi-yellow-fg">hint: </span>
-<span class="ansi-yellow-fg">hint: You can replace "git config" with "git config --global" to set a default</span>
-<span class="ansi-yellow-fg">hint: preference for all repositories. You can also pass --rebase, --no-rebase,</span>
-<span class="ansi-yellow-fg">hint: or --ff-only on the command line to override the configured default per</span>
-<span class="ansi-yellow-fg">hint: invocation.</span>
-fatal: Need to specify how to reconcile divergent branches.
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-</main>
+<canvas id="myChart"></canvas>
+<pre><code>&lt;script&gt;
+    // --- Functions ---
+    function uShapedFunction(x) {
+        return x * x;
+    }
+
+    function gradient(x) {
+        return 2 * x;
+    }
+
+    function gradientDescent(learningRate, iterations) {
+        let xStart = 5;
+        let xValues = [xStart];
+        let yValues = [uShapedFunction(xStart)];
+
+        for (let i = 0; i &lt; iterations; i++) {
+            let xCurrent = xValues[xValues.length - 1];
+            let gradientCurrent = gradient(xCurrent);
+            let xNext = xCurrent - learningRate * gradientCurrent;
+            xValues.push(xNext);
+            yValues.push(uShapedFunction(xNext));
+        }
+
+        return { xValues, yValues };
+    }
+
+    // --- Chart update function ---
+    function updateChart() {
+        let learningRate = parseFloat(document.getElementById("learningRate").value);
+        let iterations = parseInt(document.getElementById("iterations").value);
+
+        let { xValues, yValues } = gradientDescent(learningRate, iterations);
+
+        // Generate x-values for U-shaped function
+        let xRange = [];
+        for (let x = -6; x &lt;= 6; x += 0.1) {
+            xRange.push(x);
+        }
+        let uShapedYValues = xRange.map(uShapedFunction);
+
+        let ctx = document.getElementById('myChart').getContext('2d');
+        let myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: xRange,
+                datasets: [
+                    {
+                        label: 'U-shaped Function',
+                        data: uShapedYValues,
+                        borderColor: 'black',
+                        borderDash: [5, 5],
+                        fill: false
+                    },
+                    {
+                        label: 'Gradient Descent',
+                        data: yValues,
+                        borderColor: 'red',
+                        fill: false,
+                        pointRadius: 5,
+                        pointBackgroundColor: 'red'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: {
+                        display: true,
+                        title: {
+                            display: true,
+                            text: 'x'
+                        }
+                    },
+                    y: {
+                        display: true,
+                        title: {
+                            display: true,
+                            text: 'f(x)'
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    // --- Initial chart rendering ---
+    updateChart();
+&lt;/script&gt;</code></pre>
 </body>
 </html>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<!DOCTYPE html>
+
+<html>
+<body>
+<button onclick="myFunction()">Click me</button>
+<p id="demo"></p>
+<script>
+        console.log("Hello")
+    </script>
+</body>
+</html>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Gradient Descent Visualization</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<h1>Gradient Descent Visualization</h1>
+<div>
+        Learning Rate: <input id="learningRate" step="0.1" type="number" value="0.3"/>
+        Iterations: <input id="iterations" step="1" type="number" value="10"/>
+<button onclick="updateChart()">Update</button>
+</div>
+<canvas id="myChart"></canvas>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script></script></body></html></div></div></div></div></main></body></html>
