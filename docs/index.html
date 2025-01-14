@@ -9101,69 +9101,6 @@ $w_{new}=w_{old}-\alpha*\frac{\delta f_{loss}}{\delta w}$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<!DOCTYPE html>
-
-<html>
-<head>
-<title>Gradient Descent Visualization</title>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
-<body>
-<h1>Gradient Descent Visualization</h1>
-<canvas id="myChart"></canvas>
-<pre><code>&lt;script&gt;
-    // --- Data for the chart ---
-    const xRange = [];
-    for (let x = -6; x &lt;= 6; x += 0.1) {
-        xRange.push(x);
-    }
-    const uShapedYValues = xRange.map(x =&gt; x * x); // U-shaped function
-
-    // Initial gradient descent data (learning rate 0.3, iterations 10)
-    const initialGradientDescentData = {
-        xValues: [5, 3.5, 2.45, 1.715, 1.2005, 0.84035, 0.588245, 0.4117715, 0.28824005, 0.201768035],
-        yValues: [25, 12.25, 6.0025, 2.941225, 1.44105025, 0.7077441225, 0.3459181441225, 0.169237744105025, 0.082796441225, 0.040723644105025]
-    };
-
-    // --- Create the chart ---
-    const ctx = document.getElementById('myChart').getContext('2d');
-    const myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: xRange,
-            datasets: [
-                {
-                    label: 'U-shaped Function',
-                    data: uShapedYValues,
-                    borderColor: 'black',
-                    borderDash: [5, 5],
-                    fill: false
-                },
-                {
-                    label: 'Gradient Descent',
-                    data: initialGradientDescentData.yValues,
-                    borderColor: 'red',
-                    fill: false,
-                    pointRadius: 5,
-                    pointBackgroundColor: 'red'
-                }
-            ]
-        },
-        options: { // ... (chart options) ... }
-    });
-&lt;/script&gt;</code></pre>
-</body>
-</html>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h1 id="Git-commands">Git commands<a class="anchor-link" href="#Git-commands">¶</a></h1><p>Storage for git commands</p>
 </div>
 </div>
@@ -9190,7 +9127,7 @@ $w_{new}=w_{old}-\alpha*\frac{\delta f_{loss}}{\delta w}$</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [295]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [301]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="c1"># Add changes</span>
@@ -9205,7 +9142,7 @@ $w_{new}=w_{old}-\alpha*\frac{\delta f_{loss}}{\delta w}$</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [296]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [303]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="c1"># Commit changes and remember to change commit message</span>
@@ -9222,9 +9159,13 @@ $w_{new}=w_{old}-\alpha*\frac{\delta f_{loss}}{\delta w}$</p>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>[main 48448f8] Cleaned up the file
- 1 file changed, 1 insertion(+), 1 deletion(-)
- rewrite Emotion_AI.ipynb (71%)
+<pre>On branch main
+Changes not staged for commit:
+  (use "git add &lt;file&gt;..." to update what will be committed)
+  (use "git restore &lt;file&gt;..." to discard changes in working directory)
+	<span class="ansi-red-fg">modified:   Emotion_AI.ipynb</span>
+
+no changes added to commit (use "git add" and/or "git commit -a")
 </pre>
 </div>
 </div>
@@ -9235,7 +9176,7 @@ $w_{new}=w_{old}-\alpha*\frac{\delta f_{loss}}{\delta w}$</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [297]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [304]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="c1"># Push changes</span>
@@ -9255,15 +9196,15 @@ $w_{new}=w_{old}-\alpha*\frac{\delta f_{loss}}{\delta w}$</p>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Enumerating objects: 5, done.
-Counting objects:  20% (1/5)Counting objects:  40% (2/5)Counting objects:  60% (3/5)Counting objects:  80% (4/5)Counting objects: 100% (5/5)Counting objects: 100% (5/5), done.
+<pre>Enumerating objects: 9, done.
+Counting objects:  11% (1/9)Counting objects:  22% (2/9)Counting objects:  33% (3/9)Counting objects:  44% (4/9)Counting objects:  55% (5/9)Counting objects:  66% (6/9)Counting objects:  77% (7/9)Counting objects:  88% (8/9)Counting objects: 100% (9/9)Counting objects: 100% (9/9), done.
 Delta compression using up to 2 threads
-Compressing objects: 100% (3/3), done.
-Writing objects: 100% (3/3), 1.93 MiB | 4.72 MiB/s, done.
-Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
-remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (5/5), 1.99 MiB | 3.57 MiB/s, done.
+Total 5 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
 To https://github.com/KaisuH/Emotion-AI.git
-   56e2031..48448f8  main -&gt; main
+   48448f8..b79b5ec  main -&gt; main
 </pre>
 </div>
 </div>
@@ -9358,7 +9299,7 @@ rm 'Data/weights_keypoint.hdf5'
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [280]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [300]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="err">!</span><span class="n">jupyter</span> <span class="n">nbconvert</span> <span class="o">--</span><span class="n">to</span> <span class="n">html</span> <span class="s2">"Emotion_AI.ipynb"</span> <span class="o">--</span><span class="n">output</span> <span class="s2">"docs/index.html"</span>
@@ -9375,8 +9316,8 @@ rm 'Data/weights_keypoint.hdf5'
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>[NbConvertApp] Converting notebook Emotion_AI.ipynb to html
-[NbConvertApp] WARNING | Alternative text is missing on 11 image(s).
-[NbConvertApp] Writing 3133364 bytes to docs/index.html
+[NbConvertApp] WARNING | Alternative text is missing on 10 image(s).
+[NbConvertApp] Writing 3099661 bytes to docs/index.html
 </pre>
 </div>
 </div>
