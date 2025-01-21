@@ -1,0 +1,37 @@
+// My Model Architecture
+digraph {
+	subgraph cluster_resblock {
+		color=lightgrey label="RES-BLOCK" style=filled
+		conv [label="Convolution Block"]
+		id1 [label="Identity Block"]
+		id2 [label="Identity Block"]
+		conv -> id1
+		id1 -> id2
+	}
+	color=lightgrey label="Emotion AI model" labelloc=top style=filled
+	input [label=INPUT shape=box]
+	zeropad [label="Zero padding"]
+	conv2d [label=Conv2D]
+	bn_relu [label="BatchNorm, ReLU"]
+	pool [label=MaxPool2D]
+	res1 [label="RES-BLOCK"]
+	res2 [label="RES-BLOCK"]
+	avgpool [label=AveragePooling2D]
+	flatten [label="Flatten()"]
+	dense1 [label="Dense, ReLU, Dropout"]
+	dense2 [label="Dense, ReLU, Dropout"]
+	dense3 [label="Dense, ReLU"]
+	output [label="KEY-POINTS OR EMOTION"]
+	input -> zeropad
+	zeropad -> conv2d
+	conv2d -> bn_relu
+	bn_relu -> pool
+	pool -> res1
+	res1 -> res2
+	res2 -> avgpool
+	avgpool -> flatten
+	flatten -> dense1
+	dense1 -> dense2
+	dense2 -> dense3
+	dense3 -> output
+}

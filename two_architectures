@@ -1,0 +1,38 @@
+// Two Architectures Side by Side
+digraph {
+	rankdir=UD
+	subgraph cluster_resblock {
+		color=lightgrey fontsize=16 label="RES-BLOCK" nodesep=0.3 ranksep=0.3 style=filled
+		conv [label="Convolution Block" shape=box]
+		id1 [label="Identity Block 1" shape=box]
+		id2 [label="Identity Block 2" shape=box]
+		conv -> id1
+		id1 -> id2
+	}
+	subgraph cluster_final_model {
+		color=lightblue fontsize=16 label="FINAL MODEL" nodesep=0.3 ranksep=0.3 style=filled
+		input [label=INPUT shape=box]
+		zeropad [label="Zero padding" shape=box]
+		conv2d [label=Conv2D shape=box]
+		bn_relu [label="BatchNorm, ReLU" shape=box]
+		pool [label=MaxPool2D shape=box]
+		Res1 [label="Res-block" shape=box]
+		Res2 [label="Res-block" shape=box]
+		Avgpool [label=AveragePooling2D shape=box]
+		flatten [label="Flatten()" shape=box]
+		dense1 [label="Dense, ReLU, Dropout" shape=box]
+		dense2 [label="Dense, ReLU, Dropout" shape=box]
+		output [label=OUTPUT shape=box]
+		input -> zeropad
+		zeropad -> conv2d
+		conv2d -> bn_relu
+		bn_relu -> pool
+		pool -> Res1
+		Res1 -> Res2
+		Res2 -> Avgpool
+		Avgpool -> flatten
+		flatten -> dense1
+		dense1 -> dense2
+		dense2 -> output
+	}
+}
