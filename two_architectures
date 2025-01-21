@@ -3,9 +3,9 @@ digraph {
 	rankdir=UD
 	subgraph cluster_resblock {
 		color=lightgrey fontsize=16 label="RES-BLOCK" nodesep=0.3 ranksep=0.3 style=filled
-		conv [label="Convolution Block" shape=box]
-		id1 [label="Identity Block 1" shape=box]
-		id2 [label="Identity Block 2" shape=box]
+		conv [label="Convolution Block" fillcolor=lightpink shape=box style=filled]
+		id1 [label="Identity Block 1" fillcolor=lightgreen shape=box style=filled]
+		id2 [label="Identity Block 2" fillcolor=lightgreen shape=box style=filled]
 		conv -> id1
 		id1 -> id2
 	}
@@ -16,8 +16,8 @@ digraph {
 		conv2d [label=Conv2D shape=box]
 		bn_relu [label="BatchNorm, ReLU" shape=box]
 		pool [label=MaxPool2D shape=box]
-		Res1 [label="Res-block" shape=box]
-		Res2 [label="Res-block" shape=box]
+		Res1 [label="Res-block" fillcolor=lightgray shape=box style=filled]
+		Res2 [label="Res-block" fillcolor=lightgray shape=box style=filled]
 		Avgpool [label=AveragePooling2D shape=box]
 		flatten [label="Flatten()" shape=box]
 		dense1 [label="Dense, ReLU, Dropout" shape=box]
