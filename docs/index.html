@@ -8548,15 +8548,27 @@ The training.csv file has 7049 face images with corresponding keypoint locations
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">gif_url</span><span class="o">=</span><span class="s2">"https://raw.githubusercontent.com/KaisuH/Emotion-AI/refs/heads/main/pics/2D_Convolution_Animation.gif"</span>
+<div class="highlight hl-python"><pre><span></span><span class="n">gif_url</span><span class="o">=</span><span class="s2">"https://raw.githubusercontent.com/KaisuH/Emotion-AI/main/pics/2D_Convolution_Animation.gif"</span>
+<span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="s1">'&lt;img src=gif_url width="600" alt="2D Convolution Animation"&gt;'</span><span class="p">))</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<img alt="2D Convolution Animation" src="gif_url" width="600"/>
 </div>
 </div>
 </div>
@@ -8568,7 +8580,109 @@ The training.csv file has 7049 face images with corresponding keypoint locations
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="err">!</span><span class="p">[</span><span class="mi">2</span><span class="n">D</span> <span class="n">Convolution</span> <span class="n">Animation</span><span class="p">](</span><span class="n">pics</span><span class="o">/</span><span class="mi">2</span><span class="n">D_Convolution_Animation</span><span class="o">.</span><span class="n">gif</span><span class="p">){</span> <span class="n">width</span><span class="o">=</span><span class="mi">600</span><span class="n">px</span> <span class="p">}</span>
+<div class="highlight hl-python"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="s1">'&lt;img src=gif_url width="600" alt="2D Convolution Animation"&gt;'</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">/usr/local/lib/python3.11/dist-packages/IPython/core/display.py</span> in <span class="ansi-cyan-fg">_data_and_metadata</span><span class="ansi-blue-fg">(self, always_both)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1299</span>         <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">-&gt; 1300</span><span class="ansi-red-fg">             </span>b64_data <span class="ansi-blue-fg">=</span> b2a_base64<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>data<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>decode<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">'ascii'</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1301</span>         <span class="ansi-green-fg">except</span> TypeError<span class="ansi-blue-fg">:</span>
+
+<span class="ansi-red-fg">TypeError</span>: a bytes-like object is required, not 'str'
+
+During handling of the above exception, another exception occurred:
+
+<span class="ansi-red-fg">FileNotFoundError</span>                         Traceback (most recent call last)
+<span class="ansi-green-fg">/usr/local/lib/python3.11/dist-packages/IPython/core/formatters.py</span> in <span class="ansi-cyan-fg">__call__</span><span class="ansi-blue-fg">(self, obj, include, exclude)</span>
+<span class="ansi-green-intense-fg ansi-bold">    968</span> 
+<span class="ansi-green-intense-fg ansi-bold">    969</span>             <span class="ansi-green-fg">if</span> method <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">not</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">--&gt; 970</span><span class="ansi-red-fg">                 </span><span class="ansi-green-fg">return</span> method<span class="ansi-blue-fg">(</span>include<span class="ansi-blue-fg">=</span>include<span class="ansi-blue-fg">,</span> exclude<span class="ansi-blue-fg">=</span>exclude<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    971</span>             <span class="ansi-green-fg">return</span> <span class="ansi-green-fg">None</span>
+<span class="ansi-green-intense-fg ansi-bold">    972</span>         <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
+
+<span class="ansi-green-fg">/usr/local/lib/python3.11/dist-packages/IPython/core/display.py</span> in <span class="ansi-cyan-fg">_repr_mimebundle_</span><span class="ansi-blue-fg">(self, include, exclude)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1288</span>         <span class="ansi-green-fg">if</span> self<span class="ansi-blue-fg">.</span>embed<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">   1289</span>             mimetype <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>_mimetype
+<span class="ansi-green-fg">-&gt; 1290</span><span class="ansi-red-fg">             </span>data<span class="ansi-blue-fg">,</span> metadata <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>_data_and_metadata<span class="ansi-blue-fg">(</span>always_both<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">True</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1291</span>             <span class="ansi-green-fg">if</span> metadata<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">   1292</span>                 metadata <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">{</span>mimetype<span class="ansi-blue-fg">:</span> metadata<span class="ansi-blue-fg">}</span>
+
+<span class="ansi-green-fg">/usr/local/lib/python3.11/dist-packages/IPython/core/display.py</span> in <span class="ansi-cyan-fg">_data_and_metadata</span><span class="ansi-blue-fg">(self, always_both)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1300</span>             b64_data <span class="ansi-blue-fg">=</span> b2a_base64<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>data<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>decode<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">'ascii'</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1301</span>         <span class="ansi-green-fg">except</span> TypeError<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">-&gt; 1302</span><span class="ansi-red-fg">             raise FileNotFoundError(
+</span><span class="ansi-green-intense-fg ansi-bold">   1303</span>                 "No such file or directory: '%s'" % (self.data))
+<span class="ansi-green-intense-fg ansi-bold">   1304</span>         md <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">{</span><span class="ansi-blue-fg">}</span>
+
+<span class="ansi-red-fg">FileNotFoundError</span>: No such file or directory: '&lt;img src=gif_url width="600" alt="2D Convolution Animation"&gt;'</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">/usr/local/lib/python3.11/dist-packages/IPython/core/display.py</span> in <span class="ansi-cyan-fg">_data_and_metadata</span><span class="ansi-blue-fg">(self, always_both)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1299</span>         <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">-&gt; 1300</span><span class="ansi-red-fg">             </span>b64_data <span class="ansi-blue-fg">=</span> b2a_base64<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>data<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>decode<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">'ascii'</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1301</span>         <span class="ansi-green-fg">except</span> TypeError<span class="ansi-blue-fg">:</span>
+
+<span class="ansi-red-fg">TypeError</span>: a bytes-like object is required, not 'str'
+
+During handling of the above exception, another exception occurred:
+
+<span class="ansi-red-fg">FileNotFoundError</span>                         Traceback (most recent call last)
+<span class="ansi-green-fg">/usr/local/lib/python3.11/dist-packages/IPython/core/formatters.py</span> in <span class="ansi-cyan-fg">__call__</span><span class="ansi-blue-fg">(self, obj)</span>
+<span class="ansi-green-intense-fg ansi-bold">    343</span>             method <span class="ansi-blue-fg">=</span> get_real_method<span class="ansi-blue-fg">(</span>obj<span class="ansi-blue-fg">,</span> self<span class="ansi-blue-fg">.</span>print_method<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    344</span>             <span class="ansi-green-fg">if</span> method <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">not</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">--&gt; 345</span><span class="ansi-red-fg">                 </span><span class="ansi-green-fg">return</span> method<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    346</span>             <span class="ansi-green-fg">return</span> <span class="ansi-green-fg">None</span>
+<span class="ansi-green-intense-fg ansi-bold">    347</span>         <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
+
+<span class="ansi-green-fg">/usr/local/lib/python3.11/dist-packages/IPython/core/display.py</span> in <span class="ansi-cyan-fg">_repr_png_</span><span class="ansi-blue-fg">(self)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1318</span>     <span class="ansi-green-fg">def</span> _repr_png_<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">   1319</span>         <span class="ansi-green-fg">if</span> self<span class="ansi-blue-fg">.</span>embed <span class="ansi-green-fg">and</span> self<span class="ansi-blue-fg">.</span>format <span class="ansi-blue-fg">==</span> self<span class="ansi-blue-fg">.</span>_FMT_PNG<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">-&gt; 1320</span><span class="ansi-red-fg">             </span><span class="ansi-green-fg">return</span> self<span class="ansi-blue-fg">.</span>_data_and_metadata<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1321</span> 
+<span class="ansi-green-intense-fg ansi-bold">   1322</span>     <span class="ansi-green-fg">def</span> _repr_jpeg_<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+
+<span class="ansi-green-fg">/usr/local/lib/python3.11/dist-packages/IPython/core/display.py</span> in <span class="ansi-cyan-fg">_data_and_metadata</span><span class="ansi-blue-fg">(self, always_both)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1300</span>             b64_data <span class="ansi-blue-fg">=</span> b2a_base64<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>data<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>decode<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">'ascii'</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1301</span>         <span class="ansi-green-fg">except</span> TypeError<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">-&gt; 1302</span><span class="ansi-red-fg">             raise FileNotFoundError(
+</span><span class="ansi-green-intense-fg ansi-bold">   1303</span>                 "No such file or directory: '%s'" % (self.data))
+<span class="ansi-green-intense-fg ansi-bold">   1304</span>         md <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">{</span><span class="ansi-blue-fg">}</span>
+
+<span class="ansi-red-fg">FileNotFoundError</span>: No such file or directory: '&lt;img src=gif_url width="600" alt="2D Convolution Animation"&gt;'</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>&lt;IPython.core.display.Image object&gt;</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="err">!</span><span class="p">[</span><span class="mi">2</span><span class="n">D</span> <span class="n">Convolution</span> <span class="n">Animation</span><span class="p">](</span><span class="o">/</span><span class="n">pics</span><span class="o">/</span><span class="mi">2</span><span class="n">D_Convolution_Animation</span><span class="o">.</span><span class="n">gif</span><span class="p">){</span> <span class="n">width</span><span class="o">=</span><span class="mi">600</span><span class="n">px</span> <span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -8581,8 +8695,65 @@ The training.csv file has 7049 face images with corresponding keypoint locations
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>/bin/bash: -c: line 1: syntax error near unexpected token `('
-/bin/bash: -c: line 1: `[2D Convolution Animation](pics/2D_Convolution_Animation.gif){ width=600px }'
+/bin/bash: -c: line 1: `[2D Convolution Animation](/pics/2D_Convolution_Animation.gif){ width=600px }'
 </pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="c1"># Replace `yourusername` and `yourrepo` with your actual GitHub username and repository name</span>
+<span class="n">gif_url</span> <span class="o">=</span> <span class="s2">"https://yourusername.github.io/yourrepo/pics/2D_Convolution_Animation.gif"</span>
+
+<span class="n">html_code</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'''</span>
+<span class="s1">&lt;!DOCTYPE html&gt;</span>
+<span class="s1">&lt;html lang="en"&gt;</span>
+<span class="s1">&lt;head&gt;</span>
+<span class="s1">    &lt;meta charset="UTF-8"&gt;</span>
+<span class="s1">    &lt;title&gt;2D Convolution Animation&lt;/title&gt;</span>
+<span class="s1">&lt;/head&gt;</span>
+<span class="s1">&lt;body&gt;</span>
+<span class="s1">    &lt;h1&gt;2D Convolution Animation&lt;/h1&gt;</span>
+<span class="s1">    &lt;img src="</span><span class="si">{</span><span class="n">gif_url</span><span class="si">}</span><span class="s1">" width="600" alt="2D Convolution Animation"&gt;</span>
+<span class="s1">&lt;/body&gt;</span>
+<span class="s1">&lt;/html&gt;</span>
+<span class="s1">'''</span>
+
+<span class="c1"># Save the HTML to a file</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"index.html"</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">html_code</span><span class="p">)</span>
+
+<span class="c1"># Display the HTML (optional, for preview in Colab)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="n">html_code</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>2D Convolution Animation</title>
+</head>
+<body>
+<h1>2D Convolution Animation</h1>
+<img alt="2D Convolution Animation" src="https://yourusername.github.io/yourrepo/pics/2D_Convolution_Animation.gif" width="600"/>
+</body>
+</html>
 </div>
 </div>
 </div>
@@ -8593,7 +8764,7 @@ The training.csv file has 7049 face images with corresponding keypoint locations
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="2D Convolution Animation" src="pics/2D_Convolution_Animation.gif">{ width=600px }</img></p>
+<p><img alt="2D Convolution Animation" src="./pics/2D_Convolution_Animation.gif">{ width=600px }</img></p>
 </div>
 </div>
 </div>
