@@ -8536,18 +8536,6 @@ The training.csv file has 7049 face images with corresponding keypoint locations
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_hide_input">
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<img alt="2D Convolution Animation" src="gif_url" width="600"/>
-</div>
-</div>
-</div>
-</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8555,8 +8543,11 @@ The training.csv file has 7049 face images with corresponding keypoint locations
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">gif_url</span><span class="o">=</span><span class="s2">"https://raw.githubusercontent.com/KaisuH/Emotion-AI/main/pics/2D_Convolution_Animation.gif"</span>
-<span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="s1">'&lt;img src=gif_url width="600" alt="2D Convolution Animation"&gt;'</span><span class="p">))</span>
+<div class="highlight hl-python"><pre><span></span><span class="c1"># Replace `yourusername` and `yourrepo` with your actual GitHub username and repository name</span>
+<span class="n">gif_url</span> <span class="o">=</span> <span class="s2">"https://raw.githubusercontent.com/KaisuH/Emotion-AI/main/pics/2D_Convolution_Animation.gif"</span>
+
+<span class="c1"># Correct way to display using IPython.display.Image</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">gif_url</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">600</span><span class="p">))</span> <span class="c1"># Pass gif_url as the url argument</span>
 </pre></div>
 </div>
 </div>
@@ -8568,8 +8559,8 @@ The training.csv file has 7049 face images with corresponding keypoint locations
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<img alt="2D Convolution Animation" src="gif_url" width="600"/>
-</div>
+<img alt="No description has been provided for this image" src="https://raw.githubusercontent.com/KaisuH/Emotion-AI/main/pics/2D_Convolution_Animation.gif" width="600">
+</img></div>
 </div>
 </div>
 </div>
@@ -8697,63 +8688,6 @@ During handling of the above exception, another exception occurred:
 <pre>/bin/bash: -c: line 1: syntax error near unexpected token `('
 /bin/bash: -c: line 1: `[2D Convolution Animation](/pics/2D_Convolution_Animation.gif){ width=600px }'
 </pre>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="c1"># Replace `yourusername` and `yourrepo` with your actual GitHub username and repository name</span>
-<span class="n">gif_url</span> <span class="o">=</span> <span class="s2">"https://yourusername.github.io/yourrepo/pics/2D_Convolution_Animation.gif"</span>
-
-<span class="n">html_code</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'''</span>
-<span class="s1">&lt;!DOCTYPE html&gt;</span>
-<span class="s1">&lt;html lang="en"&gt;</span>
-<span class="s1">&lt;head&gt;</span>
-<span class="s1">    &lt;meta charset="UTF-8"&gt;</span>
-<span class="s1">    &lt;title&gt;2D Convolution Animation&lt;/title&gt;</span>
-<span class="s1">&lt;/head&gt;</span>
-<span class="s1">&lt;body&gt;</span>
-<span class="s1">    &lt;h1&gt;2D Convolution Animation&lt;/h1&gt;</span>
-<span class="s1">    &lt;img src="</span><span class="si">{</span><span class="n">gif_url</span><span class="si">}</span><span class="s1">" width="600" alt="2D Convolution Animation"&gt;</span>
-<span class="s1">&lt;/body&gt;</span>
-<span class="s1">&lt;/html&gt;</span>
-<span class="s1">'''</span>
-
-<span class="c1"># Save the HTML to a file</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"index.html"</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">html_code</span><span class="p">)</span>
-
-<span class="c1"># Display the HTML (optional, for preview in Colab)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="n">html_code</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<!DOCTYPE html>
-
-<html lang="en">
-<head>
-<meta charset="utf-8"/>
-<title>2D Convolution Animation</title>
-</head>
-<body>
-<h1>2D Convolution Animation</h1>
-<img alt="2D Convolution Animation" src="https://yourusername.github.io/yourrepo/pics/2D_Convolution_Animation.gif" width="600"/>
-</body>
-</html>
 </div>
 </div>
 </div>
