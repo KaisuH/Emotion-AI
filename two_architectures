@@ -1,6 +1,6 @@
 // Two Architectures Side by Side
 digraph {
-	rankdir=UD
+	rankdir=UD size="4,9"
 	subgraph cluster_resblock {
 		color=lightgrey fontsize=16 label="RES-BLOCK" nodesep=0.3 ranksep=0.3 style=filled
 		conv [label="Convolution Block" fillcolor=lightpink shape=box style=filled]

@@ -1,6 +1,6 @@
 // Two Blocks Side by Side
 digraph {
-	nodesep=0.2 rankdir=TB ranksep=0.3 splines=ortho
+	nodesep=0.2 rankdir=TB ranksep=0.3 size="4.5,9" splines=ortho
 	subgraph cluster_convblock {
 		color=lightpink fontsize=14 label="CONVOLUTION BLOCK" style=filled
 		conv_in [label=INPUT group=leftcol shape=box]
