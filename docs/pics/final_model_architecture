@@ -1,16 +1,8 @@
-// Two Architectures Side by Side
+// Final model architecture
 digraph {
-	rankdir=UD size="4,9"
-	subgraph cluster_resblock {
-		color=lightgrey fontsize=16 label="RES-BLOCK" nodesep=0.3 ranksep=0.3 style=filled
-		conv [label="Convolution Block" fillcolor=lightpink shape=box style=filled]
-		id1 [label="Identity Block 1" fillcolor=lightgreen shape=box style=filled]
-		id2 [label="Identity Block 2" fillcolor=lightgreen shape=box style=filled]
-		conv -> id1
-		id1 -> id2
-	}
+	rankdir=UD size="3.5,9"
 	subgraph cluster_final_model {
-		color=lightblue fontsize=16 label="FINAL MODEL" nodesep=0.3 ranksep=0.3 style=filled
+		color=lightblue fontsize=14 label="FINAL MODEL" nodesep=0.3 ranksep=0.3 style=filled
 		input [label=INPUT shape=box]
 		zeropad [label="Zero padding" shape=box]
 		conv2d [label=Conv2D shape=box]
@@ -34,5 +26,13 @@ digraph {
 		flatten -> dense1
 		dense1 -> dense2
 		dense2 -> output
+	}
+	subgraph cluster_resblock {
+		color=lightgrey fontsize=14 label="RES-BLOCK" nodesep=0.3 ranksep=0.3 style=filled
+		conv [label="Convolution Block" fillcolor=lightpink shape=box style=filled]
+		id1 [label="Identity Block 1" fillcolor=lightgreen shape=box style=filled]
+		id2 [label="Identity Block 2" fillcolor=lightgreen shape=box style=filled]
+		conv -> id1
+		id1 -> id2
 	}
 }
