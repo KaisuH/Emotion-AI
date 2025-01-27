@@ -1,8 +1,9 @@
 // Final model architecture
 digraph {
 	rankdir=UD size="3.5,9"
+	node [fontsize=12 margin="0.3,0.3" shape=box style=filled]
 	subgraph cluster_final_model {
-		color=lightblue fontsize=14 label="FINAL MODEL" nodesep=0.3 ranksep=0.3 style=filled
+		color=lightblue label="FINAL MODEL" nodesep=0.3 ranksep=0.3 style=filled
 		input [label=INPUT shape=box]
 		zeropad [label="Zero padding" shape=box]
 		conv2d [label=Conv2D shape=box]
@@ -28,7 +29,7 @@ digraph {
 		dense2 -> output
 	}
 	subgraph cluster_resblock {
-		color=lightgrey fontsize=14 label="RES-BLOCK" nodesep=0.3 ranksep=0.3 style=filled
+		color=lightgrey label="RES-BLOCK" nodesep=0.3 ranksep=0.3 style=filled
 		conv [label="Convolution Block" fillcolor=lightpink shape=box style=filled]
 		id1 [label="Identity Block 1" fillcolor=lightgreen shape=box style=filled]
 		id2 [label="Identity Block 2" fillcolor=lightgreen shape=box style=filled]
