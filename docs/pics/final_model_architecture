@@ -1,7 +1,7 @@
 // Final model architecture
 digraph {
 	rankdir=UD size="3.5,9"
-	node [fontsize=13 margin="0.2,0.2" shape=box]
+	node [fontsize=12 margin="0.2,0.2" shape=box]
 	subgraph cluster_final_model {
 		color=lightblue label="FINAL MODEL" nodesep=0.3 ranksep=0.3 style=filled
 		input [label=INPUT shape=box]
