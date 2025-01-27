@@ -1,7 +1,7 @@
 // Resblock architecture
 digraph {
 	nodesep=0.2 rankdir=TB ranksep=0.3 size="4.5,9" splines=ortho
-	node [fontsize=14 margin="0.1,0.2" shape=box]
+	node [fontsize=13 margin="0.2,0.2" shape=box]
 	subgraph cluster_convblock {
 		color=lightpink label="CONVOLUTION BLOCK" style=filled
 		conv_in [label=INPUT group=leftcol shape=box]
