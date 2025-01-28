@@ -9085,7 +9085,7 @@ Model: "functional"
 <h3 id="Other-things-to-consider-when-optimising">Other things to consider when optimising<a class="anchor-link" href="#Other-things-to-consider-when-optimising">¶</a></h3><p>The batch size determines how many training examples are processed before the model's internal parameters are updated. Smaller batch sizes can speed up the training per epoch because the model updates more frequently. However, this can lead to less stable convergence, i.e. the training loss may fluctuate more. A small batch size can be beneficial in case the model is overfitting (the trianing loss is significantly lower than the validation loss).</p>
 <p>A larger batch size leads to slower training per epoch and requires moe memory, but can yield more stable updates for the parameters. The model usually converges more smoothly, but might not generalise as well due to "sharp minima".</p>
 <p>Another way to tune the parameters of optimization is to use learning rate schedulers. Why? As training progresses, the model gets closer to a good solution. Smaller learning rates allow for finer adjustments to the model's weights, helping it converge to a better minimum without overshooting (see the gradient descent examples in the beginning). I have implemented a learning rate algorithm that reduces the learning rate if the validation loss does not improve in 5 epochs.</p>
-<p>After training, the model the model is saved in a .keras file. The .keras is a zip archive that contains:</p>
+<p>After training, the model is saved in a .keras file. The .keras is a zip archive that contains:</p>
 <ul>
 <li>The architecture</li>
 <li>The weights</li>
@@ -9284,7 +9284,7 @@ Epoch 3: val_loss improved from 90.14308 to 64.51100, saving model to FacialKeyP
 <li>3 = Happy</li>
 <li>4 = Surprise</li>
 </ul>
-<p>The images in the data set are of size 48px * 48px. Therefore the images need to be resized so that we can run the Expression detection model with the Key facial point detectino model together.</p>
+<p>The images in the data set are of size 48px * 48px. Therefore they need to be resized so that we can run the Expression detection model with the Key facial point detection model together.</p>
 </div>
 </div>
 </div>
@@ -9551,7 +9551,7 @@ Epoch 3: val_loss improved from 90.14308 to 64.51100, saving model to FacialKeyP
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Below is an esample of an original image, reults from resizing and final image after interpolation.</p>
+<p>Below is an example of an original image, reults from resizing and final image after interpolation.</p>
 </div>
 </div>
 </div>
@@ -9576,99 +9576,54 @@ Epoch 3: val_loss improved from 90.14308 to 64.51100, saving model to FacialKeyP
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>[main 1bd2577] Added margins to nodes
- 6 files changed, 493 insertions(+), 493 deletions(-)
- rewrite docs/pics/final_model_architecture.svg (67%)
- rewrite docs/pics/resblock_architecture.svg (67%)
+<pre>[main 404f0ae] Performed model 1 training and assessment
+ 5 files changed, 1916 insertions(+), 352 deletions(-)
+ rewrite Emotion_AI.ipynb (69%)
+ create mode 100644 FacialKeyPoints_model.json
 </pre>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">HIDE</span>
-<span class="c1"># Push changes</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'/content/drive/MyDrive/tokens/token1.txt'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">token</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-
-<span class="err">!</span><span class="n">git</span> <span class="n">push</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="err">$</span><span class="n">token</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">KaisuH</span><span class="o">/</span><span class="n">Emotion</span><span class="o">-</span><span class="n">AI</span><span class="o">.</span><span class="n">git</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_hide_input">
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Enumerating objects: 17, done.
-Counting objects:   5% (1/17)
-Counting objects:  11% (2/17)
-Counting objects:  17% (3/17)
-Counting objects:  23% (4/17)
-Counting objects:  29% (5/17)
-Counting objects:  35% (6/17)
-Counting objects:  41% (7/17)
-Counting objects:  47% (8/17)
-Counting objects:  52% (9/17)
-Counting objects:  58% (10/17)
-Counting objects:  64% (11/17)
-Counting objects:  70% (12/17)
-Counting objects:  76% (13/17)
-Counting objects:  82% (14/17)
-Counting objects:  88% (15/17)
-Counting objects:  94% (16/17)
-Counting objects: 100% (17/17)
-Counting objects: 100% (17/17), done.
+<pre>Enumerating objects: 1
+Enumerating objects: 14, done.
+Counting objects:   7% (1/14)
+Counting objects:  14% (2/14)
+Counting objects:  21% (3/14)
+Counting objects:  28% (4/14)
+Counting objects:  35% (5/14)
+Counting objects:  42% (6/14)
+Counting objects:  50% (7/14)
+Counting objects:  57% (8/14)
+Counting objects:  64% (9/14)
+Counting objects:  71% (10/14)
+Counting objects:  78% (11/14)
+Counting objects:  85% (12/14)
+Counting objects:  92% (13/14)
+Counting objects: 100% (14/14)
+Counting objects: 100% (14/14), done.
 Delta compression using up to 2 threads
-Compressing objects: 100% (10/10), done.
-Writing objects: 100% (10/10), 5.33 KiB | 210.00 KiB/s, done.
-Total 10 (delta 5), reused 0 (delta 0), pack-reused 0
-remote: Resolving deltas: 100% (5/5), completed with 5 local objects.
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (8/8), 2.19 MiB | 3.86 MiB/s, done.
+Total 8 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), done.
 To https://github.com/KaisuH/Emotion-AI.git
-   1dba898..1bd2577  main -&gt; main
+   1bd2577..404f0ae  main -&gt; main
 </pre>
 </div>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_hide_input">
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_hide_input">
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Overwriting hide_code_config.json
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_hide_input">
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>[NbConvertApp] Converting notebook Emotion_AI_tagged.ipynb to html
-[NbConvertApp] WARNING | Alternative text is missing on 11 image(s).
-[NbConvertApp] Writing 3173386 bytes to docs/index.html
-</pre>
-</div>
-</div>
-</div>
-</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_hide_input">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_hide_input">
 </div>
 </main>
 </body>
