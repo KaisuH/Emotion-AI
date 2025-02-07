@@ -12,12 +12,12 @@
 <g id="clust1" class="cluster">
 <title>cluster_convblock</title>
 <polygon fill="lightpink" stroke="lightpink" points="8,-8 8,-688.97 242,-688.97 242,-8 8,-8"/>
-<text text-anchor="middle" x="125" y="-673.77" font-family="Times,serif" font-size="14.00">CONVOLUTION BLOCK</text>
+<text text-anchor="middle" x="125" y="-673.77" font-family="Times,serif" font-size="14.00">Convolution block</text>
 </g>
 <g id="clust2" class="cluster">
 <title>cluster_idblock</title>
 <polygon fill="lightgreen" stroke="lightgreen" points="250,-79.49 250,-688.97 414,-688.97 414,-79.49 250,-79.49"/>
-<text text-anchor="middle" x="332" y="-673.77" font-family="Times,serif" font-size="14.00">IDENTITY BLOCK</text>
+<text text-anchor="middle" x="332" y="-673.77" font-family="Times,serif" font-size="14.00">Identity block</text>
 </g>
 <!-- conv_in -->
 <g id="node1" class="node">
