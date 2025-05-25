@@ -1,0 +1,39 @@
+// Keypoint detection model architecture
+digraph {
+	rankdir=UD size="3.5,9"
+	node [fontsize=12 margin="0.2,0.2" shape=box]
+	subgraph cluster_final_model {
+		color=lightblue label="Keypoint model" nodesep=0.3 ranksep=0.3 style=filled
+		input [label=INPUT shape=box]
+		zeropad [label="Zero padding" shape=box]
+		conv2d [label=Conv2D shape=box]
+		bn_relu [label="BatchNorm, ReLU" shape=box]
+		pool [label=MaxPool2D shape=box]
+		Res1 [label="Res-block" fillcolor=lightgray shape=box style=filled]
+		Res2 [label="Res-block" fillcolor=lightgray shape=box style=filled]
+		Avgpool [label=AveragePooling2D shape=box]
+		flatten [label="Flatten()" shape=box]
+		dense1 [label="Dense, ReLU, Dropout" shape=box]
+		dense2 [label="Dense, ReLU, Dropout" shape=box]
+		output [label=OUTPUT shape=box]
+		input -> zeropad
+		zeropad -> conv2d
+		conv2d -> bn_relu
+		bn_relu -> pool
+		pool -> Res1
+		Res1 -> Res2
+		Res2 -> Avgpool
+		Avgpool -> flatten
+		flatten -> dense1
+		dense1 -> dense2
+		dense2 -> output
+	}
+	subgraph cluster_resblock {
+		color=lightgrey label="Res-block" nodesep=0.3 ranksep=0.3 style=filled
+		conv [label="Convolution Block" fillcolor=lightpink shape=box style=filled]
+		id1 [label="Identity Block 1" fillcolor=lightgreen shape=box style=filled]
+		id2 [label="Identity Block 2" fillcolor=lightgreen shape=box style=filled]
+		conv -> id1
+		id1 -> id2
+	}
+}
